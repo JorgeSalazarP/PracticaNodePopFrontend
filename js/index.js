@@ -11,11 +11,11 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
     const errorElement= document.querySelector('.global-errors');
     const errorController = new ErrorController(errorElement);
-    errorController.showError('HOLA JORGE');
+ 
 
     const adlistElement = document.querySelector('ad-list');
     const adListController = new AdListController(adlistElement);
-    adListController.loader = loaderController;
+   
     adListController.loadAds();
 
     

@@ -1,6 +1,7 @@
 import BaseController from './BaseController.js';
 import dataService from '../services/DataService.js';
 import { adView } from '../views.js';
+import pubSub from '../services/Pubsub.js';
 
 export default class AdListController extends BaseController{
 
@@ -22,16 +23,18 @@ export default class AdListController extends BaseController{
 
 
     async loadAds() {
-        this.loader.showLoading();
+
+        pubSub.publish('startLoading',{});
         try {
             const ads = await dataService.getAds();
             this.render(ads);
 
         } catch (error) {
-            
+
+            pubSub.publish('error',error);
         }finally{
 
-            this.loader.hideLoading();
+            pubSub.publish('finishLoading',{});
         }
 
     }
