@@ -8,16 +8,15 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
     const loaderElement= document.querySelector('.lds-ring');
     const loaderController = new LoaderController(loaderElement);
-
+    
+    const adlistElement = document.querySelector('ad-list');
+    const adListController = new AdListController(adlistElement);
+    
+    adListController.loadAds();
+    
     const errorElement= document.querySelector('.global-errors');
     const errorController = new ErrorController(errorElement);
  
-
-    const adlistElement = document.querySelector('ad-list');
-    const adListController = new AdListController(adlistElement);
-   
-    adListController.loadAds();
-
     
 
 
