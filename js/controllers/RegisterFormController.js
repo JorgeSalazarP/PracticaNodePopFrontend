@@ -10,11 +10,16 @@ export default class RegisterFormController extends BaseController{
     attachEventListener(){
 
         this.element.addEventListener('submit', event=>{
-
             event.preventDefault();
 
-        });
+            const user = {
 
+                username: this.element.elements.username.value,
+                password: this.element.elements.password.value
+            };
+            console.log(user);
+        });
+            
         this.element.querySelectorAll('input').forEach(input=>{
 
             const button = this.element.querySelector('button');
