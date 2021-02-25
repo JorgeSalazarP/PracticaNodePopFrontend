@@ -20,6 +20,15 @@ export default class RegisterFormController extends BaseController{
             const button = this.element.querySelector('button');
             input.addEventListener('keyup', event=>{
 
+                if(input.validity.valid){
+                    input.classList.add('is-succes');
+                    input.classList.remove('is-danger');
+                }else{
+
+                    input.classList.add('is-danger');
+                    input.classList.remove('is-succes');
+                }
+
                 if (this.element.checkValidity()) {
                     button.removeAttribute('disabled');
                 }else{
