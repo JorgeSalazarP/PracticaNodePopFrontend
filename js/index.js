@@ -1,12 +1,22 @@
-import { adView } from './views.js';
 import dataService from './services/DataService.js';
+import AdListController from './controllers/AdListController.js';
+import LoaderController from './controllers/LoaderController.js';
+import ErrorController from './controllers/ErrorController.js';
 
 
 window.addEventListener("DOMContentLoaded", (event) => {
 
-    const loader = document.querySelector('.lds-ring');
-    loader.classList.add('hidden');
+    const loaderElement= document.querySelector('.lds-ring');
+    const loaderController = new LoaderController(loaderElement);
 
+    const errorElement= document.querySelector('.global-errors');
+    const errorController = new ErrorController(errorElement);
+    errorController.showError('HOLA JORGE');
+
+    const adlistElement = document.querySelector('ad-list');
+    const adListController = new AdListController(adlistElement);
+    adListController.loader = loaderController;
+    adListController.loadAds();
 
     
 
