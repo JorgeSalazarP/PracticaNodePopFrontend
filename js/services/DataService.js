@@ -21,7 +21,8 @@ export default {
 
         const config = {
             method: 'POST',
-            body: user
+            headers: {'Content-type': 'application/json'},
+            body: JSON.stringify(user)
         };
         const url = `${BASE_URL}/auth/register`;
         const response = await fetch(url,config);
@@ -29,7 +30,7 @@ export default {
             const data = response.json();
             return data;
         }else{
-            throw new Error(data);
+            throw new Error(data.message || JSON.stringify(data));
         }
 
     }

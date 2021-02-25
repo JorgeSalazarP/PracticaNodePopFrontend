@@ -1,3 +1,4 @@
+import dataService from '../services/DataService.js';
 import BaseController from './BaseController.js';
 
 export default class RegisterFormController extends BaseController{
@@ -9,7 +10,7 @@ export default class RegisterFormController extends BaseController{
 
     attachEventListener(){
 
-        this.element.addEventListener('submit', event=>{
+        this.element.addEventListener('submit', async event=>{
             event.preventDefault();
 
             const user = {
@@ -17,7 +18,20 @@ export default class RegisterFormController extends BaseController{
                 username: this.element.elements.username.value,
                 password: this.element.elements.password.value
             };
-            console.log(user);
+            
+            this.publish(this.events.START_LOADING,{});
+            try {
+                
+                const data = await dataService.registerUser(user);
+                alert('Usuario creado con éxito');
+
+            } catch (error) {
+                this.publish(this.events.ERROR,error);
+            }finally{
+
+                this.publish(this.events.FINISH_LOADING,{});
+            }
+
         });
             
         this.element.querySelectorAll('input').forEach(input=>{
