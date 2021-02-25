@@ -1,4 +1,3 @@
-import dataService from './services/DataService.js';
 import AdListController from './controllers/AdListController.js';
 import LoaderController from './controllers/LoaderController.js';
 import ErrorController from './controllers/ErrorController.js';
