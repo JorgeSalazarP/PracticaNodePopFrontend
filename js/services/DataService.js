@@ -5,13 +5,24 @@ export default {
 
     getAds : async function () {
        
+        const url = `${BASE_URL}/api/messages?_expand=user`;
         const response = await fetch(url);
         if (response.ok){
 
-            const data = response.json();
-            return data;
+            const data = await response.json();
+            return data.map(ad=>{
+                return {
+                   
+                    name: ad.name,
+                    price: ad.price,
+                    buy: ad.buy,
+                    username: ad.user.username
+
+                }
+
+            });
         }else{
-            throw new Error (`HTTP Error:`,response.status);
+            throw new Error (`HTTP Error:,${response.status}`);
         }
 
         
@@ -28,7 +39,7 @@ export default {
 
         const response = await fetch(url,config);
         if(response.ok){
-            const data = response.json();
+            const data = await response.json();
             return data;
         }else{
             throw new Error(data.message || JSON.stringify(data));

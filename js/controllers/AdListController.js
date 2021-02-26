@@ -12,11 +12,16 @@ export default class AdListController extends BaseController{
 
     render(ads){
 
+        
         for (const ad of ads){
 
+            
+            
             const article = document.createElement('article');
-            article.innerHTML = addView(ad);
+            article.innerHTML = adView(ad);
             this.element.appendChild(article);
+           
+            
         }
 
     }
@@ -33,7 +38,7 @@ export default class AdListController extends BaseController{
 
             this.publish(this.events.ERROR,error);
         }finally{
-
+         
             this.publish(this.events.FINISH_LOADING,{});
         }
 

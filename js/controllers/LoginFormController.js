@@ -28,7 +28,7 @@ export default class RegisterFormController extends BaseController{
                 await dataService.saveToken(data.accessToken);
                 window.location.href='/';
                 // dataService.getToken();
-                localStorage.setItem('token',data.accessToken);
+                
 
             } catch (error) {
                 this.publish(this.events.ERROR,error);

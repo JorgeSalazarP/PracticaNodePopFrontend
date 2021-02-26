@@ -17,7 +17,7 @@ export default class BaseController{
     }
 
     publish(eventName,eventData){
-        this.pubSub.subscribe(eventName,eventData);
+        this.pubSub.publish(eventName,eventData);
     }
 
 
