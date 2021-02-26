@@ -1,5 +1,6 @@
 import ErrorController from './controllers/ErrorController.js';
 import LoaderController from './controllers/LoaderController.js';
+import LoginFormController from './controllers/LoginFormController.js';
 
 
 window.addEventListener("DOMContentLoaded", ()=>{
@@ -11,6 +12,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
     const errorController = new ErrorController(errorElement);
 
     const formElement = document.querySelector('form');
+    const formController = new LoginFormController(formElement);
     
 
 

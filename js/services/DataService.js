@@ -1,4 +1,5 @@
 const BASE_URL ='http://127.0.0.1:8000';
+const TOKEN_KEY = 'token';
 
 export default {
 
@@ -49,6 +50,18 @@ export default {
         const url = `${BASE_URL}/auth/login`;
         return await this.post(url,user);
 
+    },
+
+    saveToken: async function (token) {
+        
+        localStorage.setItem(TOKEN_KEY,token);
+        
+    },
+
+    getToken: async function () {
+        
+        return localStorage.getItem(TOKEN_KEY);
+        
     }
 
 
