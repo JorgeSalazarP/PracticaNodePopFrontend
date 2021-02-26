@@ -16,15 +16,15 @@ export default {
         
 
     },
-
-    registerUser: async function (user) {
-
+    
+    post: async function (url,postData) {
+        
         const config = {
             method: 'POST',
             headers: {'Content-type': 'application/json'},
-            body: JSON.stringify(user)
+            body: JSON.stringify(postData)
         };
-        const url = `${BASE_URL}/auth/register`;
+
         const response = await fetch(url,config);
         if(response.ok){
             const data = response.json();
@@ -32,6 +32,22 @@ export default {
         }else{
             throw new Error(data.message || JSON.stringify(data));
         }
+
+    },
+
+    registerUser: async function (user) {
+
+        
+        const url = `${BASE_URL}/auth/register`;
+        return await this.post(url,user);
+        
+    },
+
+    loginUser: async function (user) {
+        
+       
+        const url = `${BASE_URL}/auth/login`;
+        return await this.post(url,user);
 
     }
 
