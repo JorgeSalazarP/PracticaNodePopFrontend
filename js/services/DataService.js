@@ -73,6 +73,13 @@ export default {
         
         return localStorage.getItem(TOKEN_KEY);
         
+    },
+
+    isUserLogged: async function () {
+        
+        const token = await this.getToken();
+        return token !== null;
+
     }
 
 

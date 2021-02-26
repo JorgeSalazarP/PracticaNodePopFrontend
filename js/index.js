@@ -1,6 +1,7 @@
 import AdListController from './controllers/AdListController.js';
 import LoaderController from './controllers/LoaderController.js';
 import ErrorController from './controllers/ErrorController.js';
+import NewAdOrLoggedController from './controllers/NewAdOrLoggedController.js';
 
 
 window.addEventListener("DOMContentLoaded", (event) => {
@@ -15,6 +16,11 @@ window.addEventListener("DOMContentLoaded", (event) => {
     
     const errorElement= document.querySelector('.global-errors');
     const errorController = new ErrorController(errorElement);
+
+    const newAdElement =  document.querySelector('.new-ad');
+    new NewAdOrLoggedController (newAdElement);
+
+
  
     
 
