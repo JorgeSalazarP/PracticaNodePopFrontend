@@ -7,6 +7,7 @@ export default class NewAdFormController extends BaseController{
         super(element);
         this.checkUserIsLogged();
         this.attackEventListener();
+        this.focusInTextArea();
     }
 
     async checkUserIsLogged(){
@@ -24,9 +25,28 @@ export default class NewAdFormController extends BaseController{
 
 
     }
+    focusInTextArea(){
+        const textarea = this.element.querySelector('textarea');
+        textarea.focus();
+    }
 
     attackEventListener(){
 
+        const textarea = this.element.querySelector('textarea');
+
+        textarea.addEventListener('keyup',()=>{
+
+            const button = document.querySelector('button');
+
+            if(this.element.checkValidity()){
+
+                button.removeAttribute('disabled');
+            
+            }else{
+                button.setAttribute('disabled',true);
+            }
+
+        });
 
     }
 
