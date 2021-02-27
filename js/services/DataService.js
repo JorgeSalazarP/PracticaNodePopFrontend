@@ -13,7 +13,7 @@ export default {
             return data.map(ad=>{
                 return {
                    
-                    name: ad.name,
+                    name: ad.name.replace(/(<([^>]+)>)/gi, ""),
                     price: ad.price,
                     buy: ad.buy,
                     username: ad.user.username
