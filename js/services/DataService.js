@@ -5,7 +5,7 @@ export default {
 
     getAds : async function () {
        
-        const url = `${BASE_URL}/api/messages?_expand=user`;
+        const url = `${BASE_URL}/api/messages?_expand=user&_sort=id&_order=desc`;
         const response = await fetch(url);
         if (response.ok){
 
@@ -36,6 +36,11 @@ export default {
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify(postData)
         };
+
+        const token = await this.getToken();
+        if(token){
+            config.headers['Authorization'] = `Bearer ${token}`;
+        }
 
         const response = await fetch(url,config);
         if(response.ok){
