@@ -16,6 +16,7 @@ export default {
                 const user = ad.user || {};
                 return {
                    
+                    id: ad.id,
                     name: ad.name.replace(/(<([^>]+)>)/gi, ""),
                     price: ad.price,
                     buy: ad.buy,
@@ -33,11 +34,25 @@ export default {
         
 
     },
+    post: async function(url,postData, json=true){
+
+        return await this.request('POST',url,postData,json) ;
+    },
+
+    delete : async function(url){
+        return await this.request('DELETE',url,{});
+
+    },
+
+    put: async function(url,putData,json=true){
+
+        return await this.request('PUT',url,putData,json);
+    },
     
-    post: async function (url,postData,json=true) {
+    request: async function (method,url,postData,json=true) {
         
         const config = {
-            method: 'POST',
+            method: method,
             headers: {},
             body: null
         };
@@ -142,6 +157,13 @@ export default {
             return null;
         }
         
+    },
+
+    deleteAd: async function (ad){
+
+        const url = `${BASE_URL}/api/messages/${ad.id}`;
+        return await this.delete(url);
+
     }
 
 
