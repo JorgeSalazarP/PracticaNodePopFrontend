@@ -1,6 +1,17 @@
 
 export const adView = (ad) => {
 
+  let imgHTML = '';
+
+  if(ad.image){
+
+    imgHTML = `<div class="card-image">
+    <figure class="image is-4by3">
+    <img src="${ad.image}" alt="Placeholder image">
+    </figure>
+    </div>`;
+
+  }
 
     return `<div class="card">
       <div class="card-content">
@@ -12,6 +23,7 @@ export const adView = (ad) => {
         <div class="content">${ad.price}€</div>
         <div class="content">${ad.buy}</div>
       </div>
+      ${imgHTML}
     </div>`;
 
 };

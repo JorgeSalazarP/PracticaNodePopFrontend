@@ -53,10 +53,17 @@ export default class NewAdFormController extends BaseController{
             event.preventDefault();
 
             const newAd = {
-                name: this.element.elements.message.value
+                name: this.element.elements.message.value,
+                image : null
             };
 
-            this.publish(this.events.START_LOADING,{});
+            if (this.element.elements.file.files.length > 0){
+
+                newAd.image = this.element.elements.file.files[0];
+
+            }
+
+            this.publish(this.events.START_LOADING);
 
             try {
                 

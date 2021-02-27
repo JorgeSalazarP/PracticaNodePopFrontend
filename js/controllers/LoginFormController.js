@@ -20,11 +20,10 @@ export default class RegisterFormController extends BaseController{
                 password: this.element.elements.password.value
             };
             
-            this.publish(this.events.START_LOADING,{});
+            this.publish(this.events.START_LOADING);
             try {
                
                 const data = await dataService.loginUser(user);
-                console.log('LOGIN OK',data.accessToken);
                 await dataService.saveToken(data.accessToken);
                 let next = '/';
                 const queryParams = window.location.search.replace('?','');
@@ -41,7 +40,7 @@ export default class RegisterFormController extends BaseController{
                 this.publish(this.events.ERROR,error);
             }finally{
 
-                this.publish(this.events.FINISH_LOADING,{});
+                this.publish(this.events.FINISH_LOADING);
             }
 
         });

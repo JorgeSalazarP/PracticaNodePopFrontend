@@ -11,17 +11,11 @@ export default class AdListController extends BaseController{
     }
 
     render(ads){
-
-        
         for (const ad of ads){
-
-            
-            
             const article = document.createElement('article');
             article.innerHTML = adView(ad);
             this.element.appendChild(article);
-           
-            
+        
         }
 
     }

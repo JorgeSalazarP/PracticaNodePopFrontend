@@ -11,12 +11,14 @@ export default {
 
             const data = await response.json();
             return data.map(ad=>{
+                const user = ad.user || {};
                 return {
                    
                     name: ad.name.replace(/(<([^>]+)>)/gi, ""),
                     price: ad.price,
                     buy: ad.buy,
-                    username: ad.user.username
+                    username: user.username || 'Desconocido',
+                    image: ad.image || null
 
                 }
 
@@ -29,13 +31,21 @@ export default {
 
     },
     
-    post: async function (url,postData) {
+    post: async function (url,postData,json=true) {
         
         const config = {
             method: 'POST',
-            headers: {'Content-type': 'application/json'},
-            body: JSON.stringify(postData)
+            headers: {},
+            body: null
         };
+
+        if(json){
+            config.headers['Content-type'] = 'application/json';
+            config.body = JSON.stringify(postData);
+        }else{
+            
+            config.body = postData;
+        }
 
         const token = await this.getToken();
         if(token){
@@ -90,8 +100,24 @@ export default {
     saveAd: async function (newAd) {
         
         const url = `${BASE_URL}/api/messages`;
+        if(newAd.image){ // Si hay imagen
+
+            const imageURL = await this.uploadImage(newAd.image);
+            newAd.image = imageURL;
+
+        }
         return await this.post(url,newAd);
 
+
+    },
+
+    uploadImage: async function (image) {
+        
+        const form = new FormData();
+        form.append('file',image);
+        const url = `${BASE_URL}/upload`;
+        const response = await this.post(url,form,false);
+        return response.path || null;
 
     }
 
