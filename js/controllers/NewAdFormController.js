@@ -33,10 +33,9 @@ export default class NewAdFormController extends BaseController{
     attackEventListener(){
 
         const textarea = this.element.querySelector('textarea');
+        const button = document.querySelector('button');
 
         textarea.addEventListener('keyup',()=>{
-
-            const button = document.querySelector('button');
 
             if(this.element.checkValidity()){
 
@@ -45,6 +44,32 @@ export default class NewAdFormController extends BaseController{
             }else{
                 button.setAttribute('disabled',true);
             }
+
+        });
+
+
+        this.element.addEventListener('submit',async event=>{
+
+            event.preventDefault();
+
+            const newAd = {
+                name: this.element.elements.message.value
+            };
+
+            this.publish(this.events.START_LOADING,{});
+
+            try {
+                
+                await dataService.saveAd(newAd);
+                window.location.href = '/?mensaje=newadOK';
+                
+            } catch (error) {
+                
+                this.publish(this.events.ERROR,error);
+            }finally{
+                this.publish(this.events.FINISH_LOADING);
+            }
+
 
         });
 

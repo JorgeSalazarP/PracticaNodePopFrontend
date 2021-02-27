@@ -80,6 +80,14 @@ export default {
         const token = await this.getToken();
         return token !== null;
 
+    },
+
+    saveAd: async function (newAd) {
+        
+        const url = `${BASE_URL}/api/messages`;
+        return await this.post(url,newAd);
+
+
     }
 
 
