@@ -26,8 +26,15 @@ export default class RegisterFormController extends BaseController{
                 const data = await dataService.loginUser(user);
                 console.log('LOGIN OK',data.accessToken);
                 await dataService.saveToken(data.accessToken);
-                window.location.href='/';
-                // dataService.getToken();
+                let next = '/';
+                const queryParams = window.location.search.replace('?','');
+                const queryParamsParts = queryParams.split('=');
+                if(queryParamsParts.length >=2 && queryParamsParts[0] === 'next'){
+                    next= queryParamsParts[1];
+
+                }
+                window.location.href = next;
+               
                 
 
             } catch (error) {

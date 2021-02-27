@@ -14,8 +14,8 @@ export default class NewAdFormController extends BaseController{
 
         const userIsLogged = await dataService.isUserLogged();
         if(!userIsLogged){
-
-            window.location.href = '/login.html';
+         
+            window.location.href = '/login.html?next=new-ad.html';
 
         } else{
 
@@ -62,7 +62,7 @@ export default class NewAdFormController extends BaseController{
                 
                 await dataService.saveAd(newAd);
                 window.location.href = '/?mensaje=newadOK';
-                
+
             } catch (error) {
                 
                 this.publish(this.events.ERROR,error);
