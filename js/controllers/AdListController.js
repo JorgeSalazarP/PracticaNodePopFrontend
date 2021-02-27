@@ -11,6 +11,7 @@ export default class AdListController extends BaseController{
     }
 
     render(ads){
+        this.element.innerHTML = '';
         for (const ad of ads){
             const article = document.createElement('article');
             article.innerHTML = adView(ad);
@@ -22,6 +23,8 @@ export default class AdListController extends BaseController{
                     const deletedConfirmed = confirm ('¿Estás seguro que quieres borrar el anuncio?');
                     if (deletedConfirmed){
                         await dataService.deleteAd(ad);
+                        article.remove(); //borramos al instante el anuncio que ha eliminada el usuario.
+                        await this.loadAds();
                     }
                     
 
