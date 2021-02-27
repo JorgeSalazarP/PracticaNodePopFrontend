@@ -3,11 +3,16 @@ import dataService from '../services/DataService.js';
 import { adView } from '../views.js';
 
 
+
 export default class AdListController extends BaseController{
 
     constructor(element){
-
         super(element);
+        this.subscribe(this.events.SEARCH, query=>{
+
+            this.loadAds(query);
+
+        });
     }
 
     render(ads){
@@ -38,11 +43,11 @@ export default class AdListController extends BaseController{
     }
 
 
-    async loadAds() {
+    async loadAds(query=null) {
 
         this.publish(this.events.START_LOADING,{});
         try {
-            const ads = await dataService.getAds();
+            const ads = await dataService.getAds(query);
             this.render(ads);
 
         } catch (error) {

@@ -9,6 +9,7 @@ export default class BaseController{
             START_LOADING:'startLoading',
             FINISH_LOADING:'finishLoading',
             ERROR:'error',
+            SEARCH:'search'
         }
     }
 

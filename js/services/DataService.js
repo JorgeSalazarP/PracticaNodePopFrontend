@@ -3,11 +3,15 @@ const TOKEN_KEY = 'token';
 
 export default {
 
-    getAds : async function () {
+    getAds : async function (query=null) {
        
         const currentUser = await this.getUser();
 
-        const url = `${BASE_URL}/api/messages?_expand=user&_sort=id&_order=desc`;
+        let url = `${BASE_URL}/api/messages?_expand=user&_sort=id&_order=desc`;
+        if(query){
+            url +=`&q=${query}`;
+        }
+
         const response = await fetch(url);
         if (response.ok){
 
