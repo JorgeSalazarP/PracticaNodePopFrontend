@@ -1,6 +1,12 @@
 
 export const adView = (ad) => {
 
+  let deleteButtonHTML = '';
+
+  if(ad.canBeDeleted){
+    deleteButtonHTML = '<button class="button is-danger">Delete</button>';
+  }
+
   let imgHTML = '';
 
   if(ad.image){
@@ -22,6 +28,8 @@ export const adView = (ad) => {
         </div>
         <div class="content">${ad.price}€</div>
         <div class="content">${ad.buy}</div>
+        <br>
+        ${deleteButtonHTML}
       </div>
       ${imgHTML}
     </div>`;

@@ -5,6 +5,8 @@ export default {
 
     getAds : async function () {
        
+        const currentUser = await this.getUser();
+
         const url = `${BASE_URL}/api/messages?_expand=user&_sort=id&_order=desc`;
         const response = await fetch(url);
         if (response.ok){
@@ -18,7 +20,8 @@ export default {
                     price: ad.price,
                     buy: ad.buy,
                     username: user.username || 'Desconocido',
-                    image: ad.image || null
+                    image: ad.image || null,
+                    canBeDeleted: currentUser ? currentUser.userId === ad.userId : false
 
                 }
 
@@ -119,6 +122,26 @@ export default {
         const response = await this.post(url,form,false);
         return response.path || null;
 
+    },
+
+    getUser: async function(){
+
+        const token = await this.getToken();
+        const tokenParts = token.split('.');
+        if(tokenParts.length !==3){
+            return null;
+        }
+        try {
+            const payload = tokenParts[1];
+            const jsonSTR = atob(payload); //descodificamos el base64
+            const { userId, usermane } = JSON.parse(jsonSTR);
+            return{ userId, usermane };
+
+        } catch (error) {
+            
+            return null;
+        }
+        
     }
 
 
