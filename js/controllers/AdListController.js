@@ -21,7 +21,6 @@ export default class AdListController extends BaseController{
             const article = document.createElement('article');
             article.innerHTML = adView(ad);
             const deleteButton = article.querySelector('button');
-
             if(deleteButton){ // 'Únicamente para los anuncios del usuario actual
 
                 deleteButton.addEventListener('click', async event =>{
