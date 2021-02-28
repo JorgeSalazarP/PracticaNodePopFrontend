@@ -3,7 +3,7 @@ import LoaderController from './controllers/LoaderController.js';
 import ErrorController from './controllers/ErrorController.js';
 import NewAdOrLoggedController from './controllers/NewAdOrLoggedController.js';
 import SearchController from './controllers/SearchController.js';
-
+import DetailController from './controllers/DetailController.js';
 
 window.addEventListener("DOMContentLoaded", (event) => {
 
@@ -12,6 +12,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
     
     const adlistElement = document.querySelector('.ad-list');
     const adListController = new AdListController(adlistElement);
+
+    
     
     adListController.loadAds();
     
@@ -20,6 +22,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
     const newAdElement =  document.querySelector('.new-ad');
     new NewAdOrLoggedController (newAdElement);
+
+
 
     const searchElement = document.querySelector('input[type="search"]');
     new SearchController(searchElement);

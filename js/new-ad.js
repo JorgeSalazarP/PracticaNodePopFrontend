@@ -4,14 +4,15 @@ import NewAdFormController from './controllers/NewAdFormController.js';
 
 window.addEventListener("DOMContentLoaded", event=>{
 
-    const loaderElement= document.querySelector('.lds-ring');
+     const loaderElement= document.querySelector('.lds-ring');
     const loaderController = new LoaderController(loaderElement);
 
-    const errorElement= document.querySelector('.global-errors');
-    const errorController = new ErrorController(errorElement);
+     const errorElement= document.querySelector('.global-errors');
+     const errorController = new ErrorController(errorElement);
 
-    const formElement = document.querySelector('form');
-    new NewAdFormController(formElement);
+     const formElement = document.querySelector('form');
+     new NewAdFormController(formElement);
+     
 
 
 

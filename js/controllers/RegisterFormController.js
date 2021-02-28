@@ -41,12 +41,12 @@ export default class RegisterFormController extends BaseController{
             input.addEventListener('keyup', event=>{
 
                 if(input.validity.valid){
-                    input.classList.add('is-succes');
+                    input.classList.add('is-success');
                     input.classList.remove('is-danger');
                 }else{
 
                     input.classList.add('is-danger');
-                    input.classList.remove('is-succes');
+                    input.classList.remove('is-success');
                 }
 
                 if (this.element.checkValidity()) {

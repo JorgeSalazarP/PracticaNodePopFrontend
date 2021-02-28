@@ -1,6 +1,7 @@
 
 export const adView = (ad) => {
 
+ 
   let deleteButtonHTML = '';
 
   if(ad.canBeDeleted){
@@ -12,7 +13,7 @@ export const adView = (ad) => {
   if(ad.image){
 
     imgHTML = `<div class="card-image">
-    <figure class="image is-4by3">
+    <figure class="image">
     <img src="${ad.image}" alt="Placeholder image">
     </figure>
     </div>`;
@@ -20,18 +21,18 @@ export const adView = (ad) => {
   }
 
     return `<div class="card">
+      ${imgHTML}
       <div class="card-content">
         <div class="media">
           <div class="media-content">
             <p class="title is-4">${ad.name}</p>
           </div>
         </div>
-        <div class="content">${ad.price}€</div>
-        <div class="content">${ad.buy}</div>
-        <br>
-        ${deleteButtonHTML}
+        <div class="content price" name="price">${ad.price}€</div>
+        <div class="content buy">${ad.buy}</div>
+        
       </div>
-      ${imgHTML}
+     
     </div>`;
 
 };
@@ -43,7 +44,7 @@ export const errorView = (errorMessage) => {
       <button class="delete" aria-label="delete"></button>
     </div>
     <div class="message-body">
-      ${errorMessage}
+     ${errorMessage}
     </div>
   </article>`;
 

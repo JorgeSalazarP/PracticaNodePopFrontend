@@ -1,5 +1,11 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css";
 /* Loader */
+body{
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #f0ebf8;
+  
+}
 .lds-ring, .global-errors {
   display: block;
   position: fixed;
@@ -45,7 +51,8 @@
   }
 }
 /* Cards */
-.card { margin: 40px auto; }
+
+
 /* Global errors */
 .global-errors {
   padding: 20% 10%;
@@ -58,4 +65,75 @@
   position: fixed;
   right: 20px;
   bottom: 20px;
+}
+.container{
+
+  width: 70%;
+  height: auto;
+
+}
+
+.card{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  
+}
+.card-image{
+  width: 50%;
+}
+.ad-list{
+    
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+
+}
+
+h1{
+  padding-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 3rem;
+
+}
+
+.price{
+  font-family: sans-serif;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  font-size: 1rem;
+  color: #0e0909;
+  
+}
+.newad-form p{
+  color: red;
+  font-family: sans-serif;
+
+}
+
+label{
+  font-weight: bold;
+
+}
+
+
+input[type="search"]{
+
+
+  margin-top: 2rem;
+  margin-left: 18rem;
+  width: 25%;
+  height: 30px;
+  border: none;
+  padding-left: 5px;
+  border-radius: 5px;
+  font-size: 15px;
+
+
 }

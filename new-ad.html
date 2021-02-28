@@ -4,27 +4,92 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/new-add.css">
+  
     <title>New ad</title>
 </head>
 <body>
     <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
     <div class="global-errors hidden"></div>
-    <div class="container">
-        <div class="columns">
-            <div class="column is-two-thirds">
-                <h1 class="title">New ad</h1>
+    
+    <h1 class="title">New Ad</h1>
 
-                <form>
-                    <textarea name="message" class="textarea" placeholder="Write your new add..." required></textarea>
+    <div class="container">
+
+        <form action="">
+            <div class="container">
+
+                <div class="columns description_section">
+                    <div class="column">
+                        <label for="description" class="form__label">Description *</label>
+                        <input type="text" class="form__input" name="description" id="description" placeholder="Please, write description...">
+                        <p class="form-error empty_description" hidden> *Obligatory field</p>
+                    </div>
+                   
+                </div>
+
+                <div class="columns">
+
+                    <div class="column is-half-third">
+                        <label for="price" class="form__label">Price *</label>
+                        <input type="text" class="form__input" name="price" id="price" placeholder="10.5€">
+                        <p class="form-error empty_price" hidden> *Obligatory field</p>
+                        <p class="form-error only_numbers" hidden> *Only numbers</p>
+                    </div>
+                    
+                    <div class="column">
+                        <label for="buy_sell" class="form__label">Buy/Sell</label>
+                        <select name="buy_sell" class="form__input" id="buy_sell">
+                            <option>Buy</option>
+                            <option>Sell</option>
+
+                        </select>
+                    </div>
+
+                    
+                    
+                </div>
+                <div class="columns">
+                    <div class="column">
+                        <label for="file" class="form__label">Upload image</label>
+                        <input type="file" name="file" accept="image/*">
+                    </div>
+                </div>
+                
+
+                <div class="columns">
+                    <div class="column">
+                        <button class="button is-primary">Publish</button>
+                    </div>
+                    
+                </div>
+                
+               
+            </div>
+        </form>
+
+    </div>
+        
+                    
+
+            
+                <!-- <form>
+                    <p>*Required</p>
+                    <label>Description *</label>
+                    <textarea name="message" class="textarea" placeholder="Write your new add, maximum 20" required></textarea>
+                    <label>Price *</label>
+                    <input type="number" >€
+                    <label>Choose *</label>
+                    <input type="radio" name="buy-sell">Buy
+                    <input type="radio" name="buy-sell" > Sell
                     <input type="file" name="file" accept="image/*">
                     <button class="button is-primary is-pulled-right" disabled>Publish</button>
 
-                </form>
-            </div>
-
-        </div>
-    </div>
+                </form> -->
+                
+    
     <script type="module" src="js/new-ad.js"></script>
 </body>
 </html>

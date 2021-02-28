@@ -4,7 +4,7 @@ const TOKEN_KEY = 'token';
 export default {
 
     getAds : async function (query=null) {
-       
+        
         const currentUser = await this.getUser();
 
         let url = `${BASE_URL}/api/messages?_expand=user&_sort=id&_order=desc`;
@@ -23,7 +23,7 @@ export default {
                     id: ad.id,
                     name: ad.name.replace(/(<([^>]+)>)/gi, ""),
                     price: ad.price,
-                    buy: ad.buy,
+                    buy: ad.buy ? 'Buy' : 'Sell',
                     username: user.username || 'Desconocido',
                     image: ad.image || null,
                     canBeDeleted: currentUser ? currentUser.userId === ad.userId : false
@@ -145,16 +145,16 @@ export default {
 
     getUser: async function(){
 
-        const token = await this.getToken();
-        const tokenParts = token.split('.');
-        if(tokenParts.length !==3){
-            return null;
-        }
         try {
-            const payload = tokenParts[1];
-            const jsonSTR = atob(payload); //descodificamos el base64
-            const { userId, usermane } = JSON.parse(jsonSTR);
-            return{ userId, usermane };
+            const token = await this.getToken();
+            const tokenParts = token.split('.');
+            if (tokenParts.length !== 3) {
+                return null;
+            }
+            const payload = tokenParts[1]; 
+            const jsonStr = atob(payload); // descodificamos el base64
+            const { userId, username } = JSON.parse(jsonStr); // parseamos el JSON del token que ya está descodificado
+            return { userId, username };
 
         } catch (error) {
             

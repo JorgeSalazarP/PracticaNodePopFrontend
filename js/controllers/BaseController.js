@@ -10,7 +10,8 @@ export default class BaseController{
             FINISH_LOADING:'finishLoading',
             ERROR:'error',
             SEARCH:'search',
-            AD_DELETED:'adDeleted'
+            AD_DELETED:'adDeleted',
+            
         }
     }
 
