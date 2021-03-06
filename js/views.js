@@ -21,71 +21,23 @@ export const adView = (ad) => {
     </div>`;
 
   }
- 
-//   return `<article class="column">
-//   <div class="card">
-//   ${imgHTML}
-//       <div class="card-content">
-//       <div class="media">
-//         <div class="media-content">
-//           <p class="title is-4">${ad.name}</p>
-//         </div>
-//       </div>
-//       <div class="content price" name="price">${ad.price}€</div>
-//       <div class="content buy">${ad.buy}</div>
-//       <div class="content">
-//                 <div class="placeholder"></div>
-//                 <div class="placeholder"></div>
-//                 <div class="placeholder"></div>
-//                 <div class="placeholder"></div>
-//             </div>
-//   </div>
-// </article>`;
 
-
-
-
-return `<div class="card">
-${imgHTML}
-<div class="card-content">
-<div class="card-content">
-      <div class="media">
-        <div class="media-content">
-          <p class="title is-4">${ad.name}</p>
+    return `<div class="card">
+      ${imgHTML}
+      <div class="card-content">
+        <div class="media">
+          <div class="media-content">
+            <p class="title is-4">${ad.name}</p>
+          </div>
         </div>
+        <div class="content price" name="price">${ad.price}€</div>
+        <div class="content buy">${ad.buy}</div>
+        
       </div>
-      <div class="content price" name="price">${ad.price}€</div>
-      <div class="content buy">${ad.buy}</div>
-</div>`;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+     
+    </div>`;
 
 };
-
-
-
 export const errorView = (errorMessage) => {
 
     return ` <article class="message is-danger">
@@ -137,6 +89,7 @@ export const adViewDetail = (detailAd) => {
         <div class="content buy">${detailAd.buy}</div>
         
       </div>
+      ${deleteButtonHTML}
      
     </div>`;
 

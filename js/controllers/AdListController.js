@@ -10,10 +10,6 @@ export default class AdListController extends BaseController{
     constructor(element){
         super(element);
 
-        this.subscribe(this.events.AD_DELETED,(e)=>{
-            console.log('hola5');
-        })
-
         this.subscribe(this.events.SEARCH, query=>{
 
             this.loadAds(query);
