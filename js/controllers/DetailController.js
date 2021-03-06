@@ -7,9 +7,9 @@ export default class DetailController extends BaseController{
 
     constructor(element){
         super(element);           
-        this.subscribe(this.events.AD_DELETED,()=>{
-            console.log('hola5');
-        })
+        // this.subscribe(this.events.AD_DELETED,()=>{
+        //     console.log('hola5');
+        // })
      
     }
     

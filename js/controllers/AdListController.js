@@ -1,7 +1,7 @@
-import DeleteButtonController from './DeleteButtonController.js';
 import BaseController from './BaseController.js';
 import dataService from '../services/DataService.js';
 import { adView } from '../views.js';
+
 
 
 
@@ -10,7 +10,7 @@ export default class AdListController extends BaseController{
     constructor(element){
         super(element);
 
-        this.subscribe(this.events.AD_DELETED,()=>{
+        this.subscribe(this.events.AD_DELETED,(e)=>{
             console.log('hola5');
         })
 

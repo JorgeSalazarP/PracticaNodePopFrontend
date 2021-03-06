@@ -94,12 +94,13 @@ body{
 }
 
 h1{
-  padding-top: 1.5rem;
+  
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  font-size: 3rem;
+  font-size: 2rem;
+  margin-left: 19px;
 
 }
 

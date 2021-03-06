@@ -93,3 +93,4 @@ export const adViewDetail = (detailAd) => {
     </div>`;
 
 };
+
