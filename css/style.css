@@ -79,7 +79,7 @@ body{
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  
+  height: 600px;
 }
 .card-image{
   width: 50%;
@@ -87,7 +87,8 @@ body{
 .ad-list{
     
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
     gap: 2rem;
     padding: 2rem;
 
