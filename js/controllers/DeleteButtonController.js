@@ -3,20 +3,18 @@ import dataService from '../services/DataService.js';
 
 export default class DeleteButtonController extends BaseController{
 
-    constructor(element,ad){
+    constructor(element,detailAd){
         super(element);
 
-        this.element.addEventListener('click', async ev=>{
-            const deletedConfirmed = confirm ('¿Estás seguro que quieres borrar el anuncio?');
-            if (deletedConfirmed){
-                await dataService.deleteAd(ad);
-                this.publish(this.events.AD_DELETED,ad);
-                
+        this.element.addEventListener('click', async e =>{
+
+            const deleteConfirmed = confirm('¿Está seguro que quiere borrar el anuncio?');
+            if (deleteConfirmed) {
+                await dataService.deleteAd(detailAd);
+                this.publish(this.events.AD_DELETED);
             }
             
-            
         });
-
 
     }
 

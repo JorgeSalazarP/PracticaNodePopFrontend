@@ -13,7 +13,12 @@ window.addEventListener("DOMContentLoaded", ()=>{
     const errorController = new ErrorController(errorElement);
 
     const detailAdElement = document.querySelector('.detail-ad');
-    new DetailController(detailAdElement);
+    const detailController = new DetailController(detailAdElement);
+    detailController.loadDetailAd();
+
+
+
+   
 
 
 

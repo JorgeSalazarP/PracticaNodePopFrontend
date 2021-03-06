@@ -7,6 +7,7 @@ export default class NewAdFormController extends BaseController{
 
     constructor(element){
         super(element);
+       
         this.checkUserIsLogged();
         this.attackEventListener();
         
@@ -37,6 +38,7 @@ export default class NewAdFormController extends BaseController{
 
     validationForm(){
         
+       
         const textDescription = this.element.querySelector('#description');
         const textPrice = this.element.querySelector('#price');
         
@@ -74,13 +76,13 @@ export default class NewAdFormController extends BaseController{
 
     attackEventListener(){
 
-    
+        
         this.element.addEventListener('submit', async e=>{
 
             e.preventDefault();
             
             
-            if(this.validationForm){
+            if(this.validationForm()){
                 
                 let isBuy = false;
 

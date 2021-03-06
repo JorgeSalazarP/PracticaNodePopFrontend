@@ -5,7 +5,7 @@ export default {
 
     getAds : async function (query=null) {
         
-        const currentUser = await this.getUser();
+        //const currentUser = await this.getUser();
 
         let url = `${BASE_URL}/api/messages?_expand=user&_sort=id&_order=desc`;
         if(query){
@@ -26,7 +26,7 @@ export default {
                     buy: ad.buy ? 'Buy' : 'Sell',
                     username: user.username || 'Desconocido',
                     image: ad.image || null,
-                    canBeDeleted: currentUser ? currentUser.userId === ad.userId : false
+                   // canBeDeleted: currentUser ? currentUser.userId === ad.userId : false
 
                 }
 
@@ -43,9 +43,8 @@ export default {
         return await this.request('POST',url,postData,json) ;
     },
 
-    delete : async function(url){
-        return await this.request('DELETE',url,{});
-
+    delete: async function(url) {
+        return await this.request('DELETE', url, {});
     },
 
     put: async function(url,putData,json=true){
@@ -163,12 +162,43 @@ export default {
         
     },
 
-    deleteAd: async function (ad){
-
+    deleteAd: async function(ad) {
         const url = `${BASE_URL}/api/messages/${ad.id}`;
         return await this.delete(url);
+    },
 
-    }
+    getDetail : async function (idAd) {
+        
+        const currentUser = await this.getUser();
+        const url = `${BASE_URL}/api/messages?id=${idAd}`;
+        const response = await fetch(url);
+        
+        if (response.ok){
+            const data = await response.json();
+            const detailAd = {};
+            data.map(ad=>{
+                detailAd.id = ad.id,
+                detailAd.name = ad.name,
+                detailAd.price = ad.price,
+                detailAd.buy = ad.buy ? 'Buy' : 'Sell',
+                //username: user.username || 'Desconocido',
+                detailAd.image = ad.image,
+                detailAd.canBeDeleted = currentUser ? currentUser.userId === ad.userId : false
+                
+
+            });
+         
+            return detailAd;
+            
+           
+         
+        }else{
+            throw new Error (`HTTP Error:,${response.status}`);
+        }
+
+        
+
+    },
 
 
 }
