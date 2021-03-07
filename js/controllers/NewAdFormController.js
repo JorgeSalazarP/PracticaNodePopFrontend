@@ -84,17 +84,17 @@ export default class NewAdFormController extends BaseController{
             
             if(this.validationForm()){
                 
-                let isBuy = false;
+                let buyOrSell = 'Buy';
 
-                if(this.element.elements.buy_sell.value === 'Buy'){
+                if(this.element.elements.buy_sell.value !== 'Buy'){
                     
-                    isBuy = true;
+                    buyOrSell = 'Sell';
                 }                    
 
                 const newAd = {
                     name: this.element.elements.description.value,
                     price: parseFloat(this.element.elements.price.value),
-                    buy: isBuy,
+                    type: buyOrSell,
                     image : null
 
                 }

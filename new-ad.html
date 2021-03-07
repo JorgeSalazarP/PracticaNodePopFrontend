@@ -53,8 +53,11 @@
                 </div>
                 <div class="columns">
                     <div class="column">
-                        <label for="file" class="form__label">Upload image</label>
-                        <input type="file" name="file" accept="image/*">
+                        <div id="div_file">
+                            
+                            <label for="file" id="text">Upload image</label>
+                            <input type="file" class="button" name="file" accept="image/*">
+                        </div>
                     </div>
                 </div>
                 
@@ -75,21 +78,7 @@
                     
 
             
-                <!-- <form>
-                    <p>*Required</p>
-                    <label>Description *</label>
-                    <textarea name="message" class="textarea" placeholder="Write your new add, maximum 20" required></textarea>
-                    <label>Price *</label>
-                    <input type="number" >€
-                    <label>Choose *</label>
-                    <input type="radio" name="buy-sell">Buy
-                    <input type="radio" name="buy-sell" > Sell
-                    <input type="file" name="file" accept="image/*">
-                    <button class="button is-primary is-pulled-right" disabled>Publish</button>
-
-                </form> -->
-                
-    
+               
     <script type="module" src="js/new-ad.js"></script>
 </body>
 </html>

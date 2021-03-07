@@ -41,6 +41,10 @@ export default class AdListController extends BaseController{
         this.publish(this.events.START_LOADING,{});
         try {
             const ads = await dataService.getAds(query);
+
+            if(!ads.length){ // SI LA BBDD NO TIENE ANUNCIOS
+                this.publish(this.events.ERROR,'SORRY, NO ADS');
+            }
             this.render(ads);
 
         } catch (error) {

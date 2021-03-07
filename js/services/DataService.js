@@ -23,7 +23,7 @@ export default {
                     id: ad.id,
                     name: ad.name.replace(/(<([^>]+)>)/gi, ""),
                     price: ad.price,
-                    buy: ad.buy ? 'Buy' : 'Sell',
+                    type: ad.type,
                     username: user.username || 'Desconocido',
                     image: ad.image || null,
                    // canBeDeleted: currentUser ? currentUser.userId === ad.userId : false
@@ -180,7 +180,7 @@ export default {
                 detailAd.id = ad.id,
                 detailAd.name = ad.name,
                 detailAd.price = ad.price,
-                detailAd.buy = ad.buy ? 'Buy' : 'Sell',
+                detailAd.type = ad.type,
                 //username: user.username || 'Desconocido',
                 detailAd.image = ad.image,
                 detailAd.canBeDeleted = currentUser ? currentUser.userId === ad.userId : false

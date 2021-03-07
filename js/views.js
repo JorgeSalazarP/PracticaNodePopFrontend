@@ -31,7 +31,7 @@ export const adView = (ad) => {
           </div>
         </div>
         <div class="content price" name="price">${ad.price}€</div>
-        <div class="content buy">${ad.buy}</div>
+        <div class="content buy">${ad.type}</div>
         
       </div>
      
@@ -86,7 +86,7 @@ export const adViewDetail = (detailAd) => {
           </div>
         </div>
         <div class="content price" name="price">${detailAd.price}€</div>
-        <div class="content buy">${detailAd.buy}</div>
+        <div class="content buy">${detailAd.type}</div>
         
       </div>
       ${deleteButtonHTML}

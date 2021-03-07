@@ -58,20 +58,6 @@ body{
   padding: 20% 10%;
 }
 
-/*new add*/
-
-.new-ad{
-
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-}
-.container{
-
-  width: 70%;
-  height: auto;
-
-}
 
 .card{
   display: flex;
