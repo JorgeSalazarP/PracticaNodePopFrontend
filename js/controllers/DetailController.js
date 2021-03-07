@@ -1,6 +1,6 @@
 import BaseController from './BaseController.js';
 import dataService from '../services/DataService.js'
-import { adViewDetail } from '../views.js';
+import { adView } from '../views.js';
 import DeleteButtonController from './DeleteButtonController.js';
 
 export default class DetailController extends BaseController{
@@ -16,7 +16,7 @@ export default class DetailController extends BaseController{
     async renderDetail(detailAd){
         
         const article = document.createElement('article');
-        article.innerHTML = adViewDetail(detailAd);
+        article.innerHTML = adView(detailAd);
 
         const deleteButton = article.querySelector('button');
 

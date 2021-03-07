@@ -179,7 +179,7 @@ input[type="search"]{
   padding: 15px;
   font-size: 1.5rem;
   color: white;
-  background-color:#e74023 ;
+  background-color:#23d0e7 ;
 }
 
 .login-register-buttons a {
@@ -199,4 +199,20 @@ input[type="search"]{
   justify-content: center;
   align-items: center;
   
+}
+
+/***detail page****************/
+
+.detail-ad{
+
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete-ad{
+  
+  width: 100%;
+  height: 3rem;
 }
