@@ -1,11 +1,32 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css";
 /* Loader */
+
+
+
 body{
   width: 100vw;
   min-height: 100vh;
   background-color: #f0ebf8;
+
   
 }
+
+.navbar{
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 20px 45px 0 rgba(0,0,0,.05);
+  min-height: 100px;
+}
+
+.navbar-brand{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+}
+
 .lds-ring, .global-errors {
   display: block;
   position: fixed;
@@ -50,7 +71,6 @@ body{
     transform: rotate(360deg);
   }
 }
-/* Cards */
 
 
 /* Global errors */
@@ -58,6 +78,7 @@ body{
   padding: 20% 10%;
 }
 
+/* Cards */
 
 .card{
   display: flex;
@@ -111,15 +132,51 @@ label{
 
 input[type="search"]{
 
-
-  margin-top: 2rem;
-  margin-left: 18rem;
-  width: 25%;
-  height: 30px;
-  border: none;
+  width: 50rem;
+  height: 40px;
+  border: 2px solid #0075FF;
   padding-left: 5px;
   border-radius: 5px;
-  font-size: 15px;
+  font-size: 1.4rem;
+	padding: 10px;
+}
 
+.card-content{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title{
+  color:  #0075FF;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+
+}
+
+.card-image{
+  
+  max-width: 60%;
+}
+
+.price{
+  color: #00d1b2;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.type{
+  
+  border-radius: 20px;
+  padding: 15px;
+  font-size: 1.5rem;
+  color: white;
+  background-color:#e74023 ;
+}
+
+.type.is_buy{
+
+  background-color:#6daffa ;
 
 }

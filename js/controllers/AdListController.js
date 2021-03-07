@@ -11,7 +11,6 @@ export default class AdListController extends BaseController{
         super(element);
 
         this.subscribe(this.events.SEARCH, query=>{
-
             this.loadAds(query);
 
         });
@@ -22,7 +21,7 @@ export default class AdListController extends BaseController{
         for (const ad of ads){
             const article = document.createElement('article');
             article.innerHTML = adView(ad);
- 
+             
             
             this.element.appendChild(article);
             article.addEventListener('click',e=>{
@@ -45,6 +44,7 @@ export default class AdListController extends BaseController{
             if(!ads.length){ // SI LA BBDD NO TIENE ANUNCIOS
                 this.publish(this.events.ERROR,'SORRY, NO ADS');
             }
+            
             this.render(ads);
 
         } catch (error) {
