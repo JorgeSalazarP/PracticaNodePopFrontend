@@ -1,0 +1,100 @@
+{
+  "messages": [
+    {
+      "name": "Elche CF T-Shirt",
+      "price": 78.5,
+      "type": "Buy",
+      "image": "http://127.0.0.1:8000//file-1615129597286.jpg",
+      "userId": 8,
+      "updatedAt": "2021-03-07T15:06:37.311Z",
+      "id": 7
+    },
+    {
+      "name": "FC BARCELONA T-SHIRT",
+      "price": 50,
+      "type": "Sell",
+      "image": "http://127.0.0.1:8000//file-1615129990539.jpg",
+      "userId": 8,
+      "updatedAt": "2021-03-07T15:13:10.575Z",
+      "id": 8
+    },
+    {
+      "name": "REAL MADRID CF T-SHIRT",
+      "price": 100,
+      "type": "Sell",
+      "image": "http://127.0.0.1:8000//file-1615132498265.jpg",
+      "userId": 8,
+      "updatedAt": "2021-03-07T15:54:58.301Z",
+      "id": 9
+    },
+    {
+      "name": "AT.MADRID T-SHIRT",
+      "price": 50,
+      "type": "Sell",
+      "image": "http://127.0.0.1:8000//file-1615132545830.jpg",
+      "userId": 8,
+      "updatedAt": "2021-03-07T15:55:46.081Z",
+      "id": 10
+    },
+    {
+      "name": "Real Valladolid",
+      "price": 20,
+      "type": "Sell",
+      "image": "http://127.0.0.1:8000//file-1615132627449.jpg",
+      "userId": 8,
+      "updatedAt": "2021-03-07T15:57:07.843Z",
+      "id": 12
+    },
+    {
+      "name": "OSASUNA T-SHIRT",
+      "price": 51,
+      "type": "Buy",
+      "image": null,
+      "userId": 8,
+      "updatedAt": "2021-03-07T15:57:49.673Z",
+      "id": 13
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "Rosmarí",
+      "password": "$2b$10$KxqTnqj.uqyuXCNzKnJBse2TK/5GyaZLluzR6AZETLcHN6D/uAarm"
+    },
+    {
+      "id": 2,
+      "username": "Jorge",
+      "password": "$2b$10$KxqTnqj.uqyuXCNzKnJBse2TK/5GyaZLluzR6AZETLcHN6D/uAarm"
+    },
+    {
+      "username": "ELCHE",
+      "password": "$2b$10$R27OE12ubFurFp5yCDoRo.O5ODiEDjM73poYYLLyLVUsA/gMg5ja.",
+      "id": 3
+    },
+    {
+      "username": "JSP",
+      "password": "$2b$10$fyxIUV0Jo3Y8BftirKdPK.64VNMb2qXOEuQNhxyE0Jd.HOBmopiOq",
+      "id": 4
+    },
+    {
+      "username": "JorgeSP",
+      "password": "$2b$10$sn6UJTRgxwx78Dya8FVIDe.JvoOYFFdRZqjnkhNUeKa1czXGrlC9q",
+      "id": 5
+    },
+    {
+      "username": "ROBERTO",
+      "password": "$2b$10$4cOqPNfH7ao600G69VAgh.IuWgE57IRd5hnNCtzzKIGSBwDv5b1ma",
+      "id": 6
+    },
+    {
+      "username": "ROBERTO",
+      "password": "$2b$10$4cOqPNfH7ao600G69VAgh.IuWgE57IRd5hnNCtzzKIGSBwDv5b1ma",
+      "id": 7
+    },
+    {
+      "username": "MANOLO",
+      "password": "$2b$10$WMlSELHkE4.2RTQahcp4TesKdDPjYwqBYgzihA1aG7idB.2kUuRxW",
+      "id": 8
+    }
+  ]
+}

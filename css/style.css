@@ -7,17 +7,21 @@ body{
   width: 100vw;
   min-height: 100vh;
   background-color: #f0ebf8;
+ 
 
   
 }
 
 .navbar{
- 
+  
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: 0 20px 45px 0 rgba(0,0,0,.05);
   min-height: 100px;
+  opacity: 0.8;
+
 }
 
 .navbar-brand{
@@ -27,6 +31,9 @@ body{
   width: 80%;
 }
 
+.navbar-item{
+  margin-right: 50px;
+}
 .lds-ring, .global-errors {
   display: block;
   position: fixed;
@@ -175,8 +182,21 @@ input[type="search"]{
   background-color:#e74023 ;
 }
 
-.type.is_buy{
+.login-register-buttons a {
+  margin-left: 10px;
+}
 
-  background-color:#6daffa ;
+/*******Login and Register pages***************/
+.login_register{
+  width: 50%;
+  padding-top: 10rem;
+  
+}
 
+.control {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
 }
