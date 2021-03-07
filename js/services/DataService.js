@@ -5,7 +5,7 @@ export default {
 
     getAds : async function (query=null) {
         
-        //const currentUser = await this.getUser();
+      
 
         let url = `${BASE_URL}/api/messages?_expand=user&_sort=id&_order=desc`;
         if(query){
@@ -26,7 +26,7 @@ export default {
                     type: ad.type,
                     username: user.username || 'Desconocido',
                     image: ad.image || null,
-                   // canBeDeleted: currentUser ? currentUser.userId === ad.userId : false
+                   
 
                 }
 

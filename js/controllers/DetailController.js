@@ -13,7 +13,7 @@ export default class DetailController extends BaseController{
      
     }
     
-    async renderDetail(detailAd){
+    async render(detailAd){
         
         const article = document.createElement('article');
         article.innerHTML = adView(detailAd);
@@ -41,7 +41,7 @@ export default class DetailController extends BaseController{
                 this.publish(this.events.ERROR,'Sorry, ad no exist');
                 window.location.href='/';
             }
-            this.renderDetail(detailAd);
+            this.render(detailAd);
 
         } catch (error) {
 
