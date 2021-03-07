@@ -37,7 +37,9 @@ export default class DetailController extends BaseController{
             const detailAd = await dataService.getDetail(queryParamsParts[1]);
             
             if (!detailAd.id){
-                console.log('hola');
+               
+                this.publish(this.events.ERROR,'Sorry, ad no exist');
+                window.location.href='/';
             }
             this.renderDetail(detailAd);
 
