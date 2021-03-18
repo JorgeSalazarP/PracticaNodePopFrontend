@@ -178,10 +178,9 @@ export default {
             const detailAd = {};
             data.map(ad=>{
                 detailAd.id = ad.id,
-                detailAd.name = ad.name,
+                detailAd.name = ad.name.replace(/(<([^>]+)>)/gi, ""),
                 detailAd.price = ad.price,
                 detailAd.type = ad.type,
-                //username: user.username || 'Desconocido',
                 detailAd.image = ad.image,
                 detailAd.canBeDeleted = currentUser ? currentUser.userId === ad.userId : false
                 
